@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature converter</title>
+    <link rel="stylesheet"href="temp.css">
+</head>
+<body>
+    <div class="converter-box">
+        <h2>Temperature converter</h2>
+        <label for="celsius">celsius(°c):</label>
+        <input type="number"id="celsius"placeholder="enter celsius"oninput="convertfromcelsius()">
+
+         <label for="Fahrenheit">Fahrenheit(°F):</label>
+        <input type="number"id="Fahrenheit"placeholder="enter Fahrenheit"oninput="convertfromFahrenheit()">
+
+         <label for="Kelvin">Kelvin(k):</label>
+        <input type="number"id="Kelvin"placeholder="enter Kelvin"oninput="convertfromKelvin()">
+    </div>
+    <script>
+        function convertfromcelsius()
+        {
+            let c=parseFloat(document.getElementById("celsius").value);
+            document.getElementById("Fahrenheit").value=(c*9/5+32).toFixed(2);
+            document.getElementById("Kelvin").value=(c+273.15).toFixed(2);
+        }
+          function convertfromFahrenheit()
+        {
+            let c=parseFloat(document.getElementById("Fahrenheit").value);
+            document.getElementById("celsius").value=((F-32)*5/9).toFixed(2);
+            document.getElementById("Kelvin").value=(((F-32)*5/9)+273.15).toFixed(2);
+        }
+         function convertfromKelvin()
+        {
+            let c=parseFloat(document.getElementById("Kelvin").value);
+            document.getElementById("celsius").value=(K-273.15).toFixed(2);
+            document.getElementById("Fahrenheit").value=((K-273.15)*9/5+32).toFixed(2);
+        }
+
+    </script>
+</body>
+</html>
